@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 from datetime import timedelta
 from pathlib import Path
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -49,6 +50,11 @@ INSTALLED_APPS = [
     "django_filters",
     'django_cleanup',
 ]
+
+# Django Admin Customization login app eradmin e set kora ase
+ADMIN_SITE_HEADER = "MyShop MyM Administration"
+ADMIN_SITE_TITLE = "MyShop MyM Admin"
+ADMIN_INDEX_TITLE = "Welcome to MyShop MyM Dashboard"
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',

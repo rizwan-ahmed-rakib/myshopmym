@@ -21,8 +21,8 @@
 
 
 from rest_framework import viewsets
-from .models import Setup_page,SliderBanners
-from .serializers import Setup_page_Serializer,BannerSerializer
+from .models import Setup_page, SliderBanners, ContactInfo, ContactMessage
+from .serializers import Setup_page_Serializer, BannerSerializer, ContactInfoSerializer, ContactMessageSerializer
 
 
 class Setup_pageViewSet(viewsets.ModelViewSet):
@@ -32,3 +32,12 @@ class Setup_pageViewSet(viewsets.ModelViewSet):
 class BannerViewSet(viewsets.ModelViewSet):
     queryset = SliderBanners.objects.all()
     serializer_class = BannerSerializer
+
+class ContactInfoViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = ContactInfo.objects.all()
+    serializer_class = ContactInfoSerializer
+
+
+class ContactMessageViewSet(viewsets.ModelViewSet):
+    queryset = ContactMessage.objects.all()
+    serializer_class = ContactMessageSerializer

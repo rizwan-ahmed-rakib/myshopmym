@@ -19,6 +19,9 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import CartViewSet, OrderViewSet
 
+
+# app_name = 'Order_App'
+
 router = DefaultRouter()
 router.register(r'carts', CartViewSet, basename='carts')
 router.register(r'orders', OrderViewSet, basename='orders')

@@ -26,12 +26,13 @@
 
 from django.urls import path,include
 from rest_framework.routers import DefaultRouter
-from .views import Setup_pageViewSet,BannerViewSet
-
+from .views import Setup_pageViewSet, BannerViewSet, ContactInfoViewSet, ContactMessageViewSet
 
 router = DefaultRouter()
 router.register('setup_page', Setup_pageViewSet)
 router.register('slider-banner', BannerViewSet)
+router.register("contact-info", ContactInfoViewSet, basename="contact-info")
+router.register("messages", ContactMessageViewSet, basename="messages")
 
 urlpatterns = [
     path('', include(router.urls)),

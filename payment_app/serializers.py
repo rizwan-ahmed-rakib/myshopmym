@@ -7,13 +7,15 @@ class BillingAddressSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = BillingAddress
-        fields = [
-            "id",
-            "user",
-            "username",
-            "address",
-            "zipcode",
-            "city",
-            "country",
-        ]
-        read_only_fields = ["user", "username"]
+        fields = '__all__'
+
+    #     fields = [
+    #         "id",
+    #         "user",
+    #         "username",
+    #         "address",
+    #         "zipcode",
+    #         "city",
+    #         "country",
+    #     ]
+        read_only_fields = ["user"]

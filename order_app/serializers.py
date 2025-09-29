@@ -38,17 +38,40 @@ class OrderSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Order
+        # fields = [
+        #     'id',
+        #     'user',
+        #     'orderitems',
+        #     'ordered',
+        #     'created',
+        #     'paymentId',
+        #     'orderId',
+        #     'total',
+        #     'product_image',
+        # ]
+
         fields = [
             'id',
             'user',
             'orderitems',
+            'product_image',
+            'order_type',
+            'delivery_type',
+            'status',
+            'receiver_phone_number',
+            'receiver_address',
+            'receiver_name',
+            'receiver_email',
+            'receiver_city',
+            'receiver_zip_code',
+            'receiver_country',
             'ordered',
             'created',
             'paymentId',
             'orderId',
             'total',
-            'product_image',
         ]
+
         read_only_fields = ['user', 'ordered', 'created', 'total']
 
     def get_total(self, obj):

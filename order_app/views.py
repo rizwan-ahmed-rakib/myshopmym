@@ -160,7 +160,7 @@ from .serializers import CartSerializer, OrderSerializer
 from django_filters.rest_framework import DjangoFilterBackend
 
 
-
+# *******************payment app theke ei app er viewset gula project e use kora hoitese***************
 class CartViewSet(viewsets.ModelViewSet):
     serializer_class = CartSerializer
     permission_classes = [permissions.IsAuthenticated]
@@ -243,3 +243,6 @@ class OrderViewSet(viewsets.ModelViewSet):
         cart_items.update(purchased=True)
 
         return order
+
+
+# *******************payment app theke ei app er viewset gula project e use kora hoitese***************
